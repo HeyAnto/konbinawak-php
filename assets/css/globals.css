@@ -1,0 +1,115 @@
+@import url("components.css");
+@import url("utilities.css");
+
+@font-face {
+  font-family: "BDO Grotesk";
+  src: url(/assets/fonts/BDOGrotesk-VF.ttf) format("truetype");
+}
+
+:root {
+  /* Primary Color */
+  --color-dark: #000000;
+  --color-white: #ffffff;
+  --color-grey-dark: #939393;
+
+  /* Blue Color */
+  --color-dark-blue: #2127ab;
+  --color-blue: #3139fb;
+
+  /* Pink Color */
+  --color-dark-pink: #ff5060;
+  --color-pink: #ff9999;
+
+  /* Tag Color */
+  --color-tag-wtf: #ffa600;
+  --color-tag-politique: #5e28ff;
+  --color-tag-gaming: #ff5060;
+
+  /* Font Family */
+  --font-family: "BDO Grotesk", "Arial", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Font Size */
+  --font-size-min: 0.75rem;
+  --font-size-p: 1rem;
+  --font-size-h1: 1.5rem;
+  --font-size-h2: 1.25rem;
+
+  /* Line heights */
+  --line-height-min: 20px;
+  --line-height-p: 25px;
+  --line-height-h1: 30px;
+  --line-height-h2: 25px;
+}
+
+/* Font Style */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--font-size-h2);
+}
+
+p {
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+}
+
+/* Layout */
+::selection {
+  color: var(--color-dark-pink);
+  background: var(--color-pink);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  color: var(--color-dark);
+  background-color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-p);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 50px;
+}
+
+/* Media */
+@media screen and (max-width: 425px) {
+  main {
+    padding: 50px 10px;
+  }
+}
