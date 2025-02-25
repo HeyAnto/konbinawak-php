@@ -18,7 +18,7 @@
 
   /* Pink Color */
   --color-dark-pink: #ff5060;
-  --color-pink: #ff9999;
+  --color-pink: #ffdede;
 
   /* Tag Color */
   --color-tag-wtf: #ffa600;
@@ -102,9 +102,16 @@ body {
 
 main {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 100px 50px;
+  max-width: 1920px;
+  width: 100%;
+  padding: 100px 50px 200px;
+  gap: 200px;
+}
+
+/* Other */
+a {
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 /* Media */

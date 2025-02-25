@@ -1,12 +1,16 @@
 <?php
 $title = "Konbinawak";
-include "./components/head.php";
+include_once "./components/head.php";
 ?>
 
-<body>
+<?php
+include_once "./components/navbar.php"
+?>
 
-</body>
+<main>
+
+</main>
 
 <?php
-include "./components/footer.php";
+include_once "./components/footer.php";
 ?>

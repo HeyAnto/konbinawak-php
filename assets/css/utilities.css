@@ -18,9 +18,30 @@
 /* Justify */
 .justify-center {
   justify-content: center;
-  align-items: center;
 }
 
 .justify-between {
   justify-content: space-between;
+}
+
+/* Align */
+.align-item-center {
+  align-items: center;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+/* Gap */
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-50 {
+  gap: 50px;
 }
