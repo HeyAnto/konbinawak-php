@@ -7,8 +7,10 @@ include_once "./components/head.php";
 include_once "./components/navbar.php"
 ?>
 
-<main>
-
+<main class="flex flex-column align-item-center">
+    <section class="flex flex-column gap-50">
+        <h1>Accueil</h1>
+    </section>
 </main>
 
 <?php
