@@ -1,4 +1,7 @@
 <?php
+require_once "../db/article-db.php";
+$category_id = 1;
+$articles = getArticlesByCategory($category_id);
 $title = "Konbinawak - Gaming";
 include_once "../components/header.php";
 ?>
@@ -9,6 +12,15 @@ include_once "../components/header.php";
             <h1>Gaming</h1>
         </mark>
         <h2 style="text-align: center;">Tout sur les sujets sur les jeux vidéos</h2>
+    </section>
+
+    <section class="archives-content flex flex-wrap gap-20">
+        <?php include "../components/article-card.php"; ?>
+    </section>
+
+    <section class="flex flex-column align-item-center gap-10">
+        <img class="no-more" src="/assets/images/no-more.gif" alt="No More Article">
+        <p class="p-grey">Il n'y a rien de plus pour l'instant...</p>
     </section>
 </main>
 

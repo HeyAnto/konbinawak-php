@@ -87,10 +87,10 @@ footer img {
 
 .article-tag {
   width: fit-content;
+  height: fit-content;
   padding: 0px 8px;
   border-radius: 8px;
   color: var(--color-white);
-  background-color: var(--color-tag-wtf);
 }
 
 /* Page Title/Tag */

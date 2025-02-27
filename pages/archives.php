@@ -1,6 +1,8 @@
 <?php
+require_once "../db/article-db.php";
 $title = "Konbinawak - Archives";
 include_once "../components/header.php";
+$articles = getArticles();
 ?>
 
 <main class="flex flex-column align-item-center gap-100">
@@ -10,13 +12,11 @@ include_once "../components/header.php";
         </mark>
         <h2 style="text-align: center;">Toutes les archives de Konbinawak</h2>
     </section>
-    <section class="archives-content">
-        <?php
-        for ($i = 0; $i < 9; $i++) {
-            include "../components/article-card.php";
-        }
-        ?>
+
+    <section class="archives-content flex flex-wrap gap-20">
+        <?php include "../components/article-card.php"; ?>
     </section>
+
     <section class="flex flex-column align-item-center gap-10">
         <img class="no-more" src="/assets/images/no-more.gif" alt="No More Article">
         <p class="p-grey">Il n'y a rien de plus pour l'instant...</p>

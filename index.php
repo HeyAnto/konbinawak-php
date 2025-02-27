@@ -1,5 +1,4 @@
 <?php
-$title = "Konbinawak";
 include_once "./components/header.php";
 ?>
 
