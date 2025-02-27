@@ -53,3 +53,8 @@
 .gap-100 {
   gap: 6.25rem;
 }
+
+/* Margin */
+.mt-20 {
+  margin-top: 1.25rem;
+}

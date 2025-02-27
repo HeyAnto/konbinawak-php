@@ -119,7 +119,7 @@ main {
   padding: 100px 50px 200px;
 }
 
-.archives-content {
+.card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -135,13 +135,13 @@ a {
 
 /* Media */
 @media screen and (max-width: 1024px) {
-  .archives-content {
+  .card-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .archives-content {
+  .card-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }

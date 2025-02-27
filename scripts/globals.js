@@ -1,3 +1,4 @@
+// Loading Screen
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     document.getElementById("loading-screen").style.opacity = "0";

@@ -1,27 +1,25 @@
+<?php
+require_once "./db/article-db.php";
+$articles = getFeaturedArticles();
+?>
+
 <section class="carousel">
-    <div class="carousel-inner">
-        <a href="" class="carousel-item active">
-            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 1">
-            <div class="carousel-caption">
-                <h3>Titre 1</h3>
-                <p>Tag 1</p>
-            </div>
-        </a>
-        <a href="" class="carousel-item">
-            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 2">
-            <div class="carousel-caption">
-                <h3>Titre 2</h3>
-                <p>Tag 2</p>
-            </div>
-        </a>
-        <a href="" class="carousel-item">
-            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 3">
-            <div class="carousel-caption">
-                <h3>Titre 3</h3>
-                <p>Tag 3</p>
-            </div>
-        </a>
+    <div class="carousel-inner flex">
+        <?php foreach ($articles as $article): ?>
+            <a href="../pages/article.php?id=<?= htmlspecialchars($article["id"]) ?>" class="carousel-item">
+                <img class="article-cover" src="<?= $article["img_cover"] ?: "/assets/images/articles/cover-null.webp" ?>"
+                    alt="<?= $article["title"] ?>">
+                <div class="flex flex-column gap-5 mt-20">
+                    <h2><?= $article["title"] ?></h2>
+                    <p class="p-grey"><?= $article["description"] ?></p>
+                    <span class="article-tag <?= $article["category_color"] ?: "tag-default" ?>">
+                        <p class="p-min"><?= $article["category_name"] ?: "Non classé" ?></p>
+                    </span>
+                </div>
+            </a>
+        <?php endforeach; ?>
     </div>
     <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
     <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+    <script src="/scripts/carousel.js"></script>
 </section>

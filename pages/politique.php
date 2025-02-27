@@ -11,10 +11,10 @@ include_once "../components/header.php";
         <span class="page-title tag-politique">
             <h1>Politique</h1>
         </span>
-        <h2 style="text-align: center;">Tout sur les sujets sur la politique française</h2>
+        <h2 style="text-align: center;">Tout sur la politique française</h2>
     </section>
 
-    <section class="archives-content flex flex-wrap gap-20">
+    <section class="card-container flex flex-wrap gap-20">
         <?php include "../components/article-card.php"; ?>
     </section>
 

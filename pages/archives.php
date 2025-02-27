@@ -13,7 +13,7 @@ $articles = getArticles();
         <h2 style="text-align: center;">Toutes les archives de Konbinawak</h2>
     </section>
 
-    <section class="archives-content flex flex-wrap gap-20">
+    <section class="card-container flex flex-wrap gap-20">
         <?php include "../components/article-card.php"; ?>
     </section>
 

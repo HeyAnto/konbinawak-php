@@ -9,6 +9,6 @@
 
 </body>
 
-<script src="/scripts/loading.js"></script>
+<script src="/scripts/globals.js"></script>
 
 </html>

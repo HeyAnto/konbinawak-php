@@ -14,7 +14,7 @@ include_once "../components/header.php";
         <h2 style="text-align: center;">Catégorie destinée à la génialissime Selvi</h2>
     </section>
 
-    <section class="archives-content flex flex-wrap gap-20">
+    <section class="card-container flex flex-wrap gap-20">
         <?php include "../components/article-card.php"; ?>
     </section>
 
