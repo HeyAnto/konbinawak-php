@@ -42,7 +42,7 @@ nav {
   width: 100%;
   top: -2px;
 
-  background-image: url("/assets/images/utilities/style-head.svg");
+  background-image: url("/assets/images/utilities/style-head.png");
   background-repeat: repeat-x;
 }
 
@@ -63,7 +63,7 @@ footer img {
   width: 100%;
   top: 2px;
 
-  background-image: url("/assets/images/utilities/style-foot.svg");
+  background-image: url("/assets/images/utilities/style-foot.png");
   background-repeat: repeat-x;
 }
 
@@ -148,6 +148,13 @@ footer img {
 .article-content {
   max-width: 700px;
   width: 100%;
+}
+
+/* Article Comment */
+.article-comment {
+  padding: 12px;
+  border: solid 1px var(--color-dark);
+  border-radius: 8px;
 }
 
 /* Loading Screen */

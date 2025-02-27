@@ -3,7 +3,8 @@ require_once "./db/article-db.php";
 $articles = getFeaturedArticles();
 ?>
 
-<section class="carousel">
+<section class="carousel flex flex-column gap-20">
+    <h2>À la une sur Konbinawak</h2>
     <div class="carousel-inner flex">
         <?php foreach ($articles as $article): ?>
             <a href="../pages/article.php?id=<?= htmlspecialchars($article["id"]) ?>" class="carousel-item">
