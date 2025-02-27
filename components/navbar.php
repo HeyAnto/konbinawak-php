@@ -19,6 +19,10 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
                 data-page="politique">
                 <p>Politique</p>
             </a>
+            <a class="btn-nav <?= $currentPage === 'selvi' ? 'nav-active' : '' ?>" href="/pages/selvi.php"
+                data-page="selvi">
+                <p>Selvi</p>
+            </a>
             <a class="btn-nav <?= $currentPage === 'wtf' ? 'nav-active' : '' ?>" href="/pages/wtf.php" data-page="wtf">
                 <p>WTF</p>
             </a>

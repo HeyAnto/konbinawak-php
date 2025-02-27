@@ -1,21 +1,21 @@
 <section class="carousel">
     <div class="carousel-inner">
         <a href="" class="carousel-item active">
-            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 1">
+            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 1">
             <div class="carousel-caption">
                 <h3>Titre 1</h3>
                 <p>Tag 1</p>
             </div>
         </a>
         <a href="" class="carousel-item">
-            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 2">
+            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 2">
             <div class="carousel-caption">
                 <h3>Titre 2</h3>
                 <p>Tag 2</p>
             </div>
         </a>
         <a href="" class="carousel-item">
-            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 3">
+            <img class="article-cover" src="/assets/images/articles/cover-null.webp" alt="Image 3">
             <div class="carousel-caption">
                 <h3>Titre 3</h3>
                 <p>Tag 3</p>

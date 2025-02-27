@@ -121,6 +121,10 @@ footer img {
   background-color: var(--color-tag-wtf);
 }
 
+.tag-selvi {
+  background-color: var(--color-tag-selvi);
+}
+
 /* No More */
 .no-more {
   width: 200px;
