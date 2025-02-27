@@ -1,22 +1,21 @@
 <?php
 $title = "Konbinawak - Archives";
-include_once "../components/head.php";
+include_once "../components/header.php";
 ?>
 
-<?php
-include_once "../components/navbar.php"
-?>
-
-<main class="flex flex-column align-item-center">
-    <section class="flex flex-column gap-50">
-        <h1 style="text-align: center;">Nos Archives</h1>
-        <a href=""></a>
-        <div class="archives-content">
-            <?php
-            for ($i = 0; $i < 9; $i++) {
-                include "../components/article-card.php";
-            }
-            ?>
+<main class="flex flex-column align-item-center gap-100">
+    <section class="flex flex-column align-item-center gap-10">
+        <mark class="page-title tag-archive">
+            <h1>Archives</h1>
+        </mark>
+        <h2 style="text-align: center;">Toutes les archives de Konbinawak</h2>
+    </section>
+    <section class="archives-content">
+        <?php
+        for ($i = 0; $i < 9; $i++) {
+            include "../components/article-card.php";
+        }
+        ?>
     </section>
     <section class="flex flex-column align-item-center gap-10">
         <img class="no-more" src="/assets/images/no-more.gif" alt="No More Article">

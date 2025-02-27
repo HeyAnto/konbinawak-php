@@ -1,15 +1,14 @@
 <?php
-$title = "Konbinawak - Archives";
-include_once "../components/head.php";
+$title = "Konbinawak - Gaming";
+include_once "../components/header.php";
 ?>
 
-<?php
-include_once "../components/navbar.php"
-?>
-
-<main class="flex flex-column align-item-center">
-    <section class="flex flex-column gap-50">
-        <h1>Gaming</h1>
+<main class="flex flex-column align-item-center gap-100">
+    <section class="flex flex-column align-item-center gap-10">
+        <mark class="page-title tag-gaming">
+            <h1>Gaming</h1>
+        </mark>
+        <h2 style="text-align: center;">Tout sur les sujets sur les jeux vidéos</h2>
     </section>
 </main>
 

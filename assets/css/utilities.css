@@ -35,17 +35,21 @@
 
 /* Gap */
 .gap-5 {
-  gap: 5px;
+  gap: 0.3125rem;
 }
 
 .gap-10 {
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .gap-20 {
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .gap-50 {
-  gap: 50px;
+  gap: 3.125rem;
+}
+
+.gap-100 {
+  gap: 6.25rem;
 }

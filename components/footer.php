@@ -7,8 +7,8 @@
     </div>
 </footer>
 
-<script src=" /scripts/nav-active.js"></script>
-
 </body>
+
+<script src="/scripts/loading.js"></script>
 
 </html>

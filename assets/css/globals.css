@@ -116,7 +116,6 @@ body {
 main {
   flex: 1;
   padding: 100px 50px 200px;
-  gap: 200px;
 }
 
 .archives-content {

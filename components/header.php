@@ -12,3 +12,8 @@
 </head>
 
 <body>
+
+    <?php
+    include_once "navbar.php";
+    include_once "loading-screen.php";
+    ?>

@@ -1,29 +1,27 @@
-<div class="carousel-container">
-    <!-- Carrousel -->
-    <div class="carousel">
-        <!-- Carte 1 -->
-        <div class="article-card">
-            <img class="article-cover" src="/assets/images/cover1.jpg" alt="Article Image 1">
-        </div>
-        <!-- Carte 2 -->
-        <div class="article-card">
-            <img class="article-cover" src="/assets/images/cover2.jpg" alt="Article Image 2">
-        </div>
-        <!-- Carte 3 -->
-        <div class="article-card">
-            <img class="article-cover" src="/assets/images/cover3.jpg" alt="Article Image 3">
-        </div>
+<section class="carousel">
+    <div class="carousel-inner">
+        <a href="" class="carousel-item active">
+            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 1">
+            <div class="carousel-caption">
+                <h3>Titre 1</h3>
+                <p>Tag 1</p>
+            </div>
+        </a>
+        <a href="" class="carousel-item">
+            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 2">
+            <div class="carousel-caption">
+                <h3>Titre 2</h3>
+                <p>Tag 2</p>
+            </div>
+        </a>
+        <a href="" class="carousel-item">
+            <img class="article-cover" src="/assets/images/articles/cover-null.jpg" alt="Image 3">
+            <div class="carousel-caption">
+                <h3>Titre 3</h3>
+                <p>Tag 3</p>
+            </div>
+        </a>
     </div>
-
-    <!-- Informations sous le carrousel -->
-    <div class="carousel-info">
-        <h2 id="carousel-title">Titre de l'article</h2>
-        <mark class="article-tag">
-            <p class="p-min" id="carousel-category">Catégorie</p>
-        </mark>
-    </div>
-
-    <!-- Contrôles du carrousel -->
-    <button class="carousel-control prev">&#10094;</button>
-    <button class="carousel-control next">&#10095;</button>
-</div>
+    <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+</section>
