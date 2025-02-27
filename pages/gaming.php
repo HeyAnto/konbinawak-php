@@ -8,9 +8,9 @@ include_once "../components/header.php";
 
 <main class="flex flex-column align-item-center gap-100">
     <section class="flex flex-column align-item-center gap-10">
-        <mark class="page-title tag-gaming">
+        <span class="page-title tag-gaming">
             <h1>Gaming</h1>
-        </mark>
+        </span>
         <h2 style="text-align: center;">Tout sur les sujets sur les jeux vidéos</h2>
     </section>
 

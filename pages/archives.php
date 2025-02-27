@@ -7,9 +7,9 @@ $articles = getArticles();
 
 <main class="flex flex-column align-item-center gap-100">
     <section class="flex flex-column align-item-center gap-10">
-        <mark class="page-title tag-archive">
+        <span class="page-title tag-archive">
             <h1>Archives</h1>
-        </mark>
+        </span>
         <h2 style="text-align: center;">Toutes les archives de Konbinawak</h2>
     </section>
 
