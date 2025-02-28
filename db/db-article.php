@@ -20,12 +20,15 @@ function getArticlesByCategory($category_id)
     $sql = "SELECT articles.*, category.name AS category_name, category.color AS category_color
             FROM articles 
             LEFT JOIN category ON articles.category_id = category.id
-            WHERE articles.category_id = ?";
+            WHERE articles.category_id = ?
+            ORDER BY articles.created_at DESC
+            LIMIT 3";
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$category_id]);
     return $stmt->fetchAll();
 }
+
 
 function getArticleById($id)
 {
