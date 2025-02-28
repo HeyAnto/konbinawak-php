@@ -2,9 +2,9 @@
 include_once "./components/header.php";
 require_once "./db/db-article.php";
 
-$gamingArticles = getArticlesByCategory(1);
-$politiqueArticles = getArticlesByCategory(2);
-$wtfArticles = getArticlesByCategory(3);
+$politiqueArticles = getArticlesByCategory(2, 3);
+$wtfArticles = getArticlesByCategory(3, 3);
+$gamingArticles = getArticlesByCategory(1, 3);
 ?>
 
 <main class="flex flex-column align-item-center gap-100">
