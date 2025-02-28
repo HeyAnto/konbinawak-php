@@ -1,9 +1,15 @@
 <?php
 require_once "../db/article-db.php";
 require_once "../db/comments-db.php";
-$article = getArticleById($_GET["id"]);
+
+$article = getArticleById($_GET["id"] ?? null);
+
+if (!$article) {
+    include "../components/article-not-found.php";
+}
+
 $comments = getComments($_GET["id"]);
-$pageTitle = ($article["title"]);
+$pageTitle = $article["title"];
 $title = "Konbinawak - $pageTitle";
 include_once "../components/header.php";
 ?>

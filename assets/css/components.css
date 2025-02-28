@@ -158,7 +158,7 @@ footer img {
 }
 
 /* Loading Screen */
-#loading-screen {
+.overlay-display {
   position: fixed;
   top: 0;
   left: 0;
@@ -169,8 +169,22 @@ footer img {
   transition: opacity 0.5s ease-out;
 }
 
-#loading-logo {
+.overlay-display img {
   width: 200px;
+}
+
+/* Button */
+.btn-primary {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(0.95);
+  background-color: var(--color-light-grey);
 }
 
 /* Page Title/Tag */
