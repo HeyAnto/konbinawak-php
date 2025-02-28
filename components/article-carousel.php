@@ -4,7 +4,7 @@ $articles = getFeaturedArticles();
 ?>
 
 <section class="carousel flex flex-column gap-20">
-    <h2>À la une sur Konbinawak</h2>
+    <h1>À la une sur Konbinawak</h1>
     <div class="carousel-inner flex">
         <?php foreach ($articles as $article): ?>
             <a href="../pages/article.php?id=<?= htmlspecialchars($article["id"]) ?>" class="carousel-item">

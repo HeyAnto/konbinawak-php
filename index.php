@@ -13,7 +13,7 @@ $gamingArticles = getArticlesByCategory(1, 3);
     <section class="flex flex-column gap-10">
         <a href="./pages/politique.php" class="flex">
             <span class="page-title tag-politique">
-                <h1>Politique</h1>
+                <h2>Politique</h2>
             </span>
         </a>
         <div class="card-container flex flex-wrap gap-20">
@@ -27,7 +27,7 @@ $gamingArticles = getArticlesByCategory(1, 3);
     <section class="flex flex-column gap-10">
         <a href="./pages/wtf.php" class="flex">
             <span class="page-title tag-wtf">
-                <h1>WTF</h1>
+                <h2>WTF</h2>
             </span>
         </a>
         <div class="card-container flex flex-wrap gap-20">
@@ -41,7 +41,7 @@ $gamingArticles = getArticlesByCategory(1, 3);
     <section class="flex flex-column gap-10">
         <a href="./pages/gaming.php" class="flex">
             <span class="page-title tag-gaming">
-                <h1>Gaming</h1>
+                <h2>Gaming</h2>
             </span>
         </a>
         <div class="card-container flex flex-wrap gap-20">
