@@ -25,6 +25,10 @@
 }
 
 /* Align */
+.align-item-right {
+  align-items: flex-end;
+}
+
 .align-item-center {
   align-items: center;
 }

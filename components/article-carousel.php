@@ -1,5 +1,5 @@
 <?php
-require_once "./db/article-db.php";
+require_once "./db/db-article.php";
 $articles = getFeaturedArticles();
 ?>
 

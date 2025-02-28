@@ -1,8 +1,21 @@
 <?php
-require_once "../db/article-db.php";
-require_once "../db/comments-db.php";
+require_once "../db/db-article.php";
+require_once "../db/db-comments.php";
 
-$article = getArticleById($_GET["id"] ?? null);
+$article = getArticleById($_GET["id"]);
+
+if (isset($_POST["username"]) && isset($_POST["content"]) && isset($_POST["articleId"])) {
+    $username = $_POST["username"];
+    $content = $_POST["content"];
+    $articleId = $_POST["articleId"];
+
+    if (createComment($username, $content, $articleId)) {
+        header("Location: #section-comments");
+        exit();
+    } else {
+        include "../components/article-not-found.php";
+    }
+}
 
 if (!$article) {
     include "../components/article-not-found.php";
@@ -38,15 +51,16 @@ include_once "../components/header.php";
         <p><?= nl2br(($article["content"])) ?></p>
     </section>
 
-    <section class="article-content flex flex-column gap-50 mt-200">
+    <section id="section-comments" class="article-content flex flex-column gap-50 mt-200">
         <h2>Commentaires</h2>
         <div class="flex flex-column gap-10">
+            <?php require_once "../components/form-comment.php" ?>
             <?php if (!empty($comments)): ?>
                 <?php foreach ($comments as $comment): ?>
                     <div class="article-comment flex flex-column">
                         <div class="flex flex-row justify-between gap-10">
                             <p><strong><?= htmlspecialchars($comment['username']); ?></strong></p>
-                            <p class="p-min">Créer le <?= date("d-m-Y", strtotime($comment["created_at"])) ?></p>
+                            <p class="p-min"><?= date("d-m-Y - H:i:s", strtotime($comment["created_at"])) ?></p>
                         </div>
                         <p><?= htmlspecialchars($comment['content']); ?></p>
                     </div>

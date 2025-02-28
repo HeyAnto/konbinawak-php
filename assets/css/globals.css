@@ -129,6 +129,17 @@ main {
 }
 
 /* Other */
+button {
+  background-color: var(--color-dark);
+  border: none;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-p);
+}
+
 a {
   text-decoration: none;
   color: var(--color-dark);

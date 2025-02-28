@@ -1,5 +1,5 @@
 <?php
-require_once "../db/article-db.php";
+require_once "../db/db-article.php";
 $title = "Konbinawak - Archives";
 include_once "../components/header.php";
 $articles = getArticles();

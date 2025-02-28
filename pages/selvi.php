@@ -1,5 +1,5 @@
 <?php
-require_once "../db/article-db.php";
+require_once "../db/db-article.php";
 $category_id = 4;
 $articles = getArticlesByCategory($category_id);
 $title = "Konbinawak - Selvi";

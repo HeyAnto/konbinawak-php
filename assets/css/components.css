@@ -157,6 +157,30 @@ footer img {
   border-radius: 8px;
 }
 
+/* Article Form Comment */
+.form-comment {
+  width: 100%;
+  padding: 12px;
+  border: solid 1px var(--color-grey);
+  border-radius: 8px;
+  outline: none;
+  resize: none;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-p);
+  transition: all 0.3s;
+}
+
+.form-comment:hover {
+  border-color: var(--color-dark);
+}
+
+.form-comment:focus {
+  border-color: var(--color-dark);
+}
+
 /* Loading Screen */
 .overlay-display {
   position: fixed;
@@ -175,6 +199,7 @@ footer img {
 
 /* Button */
 .btn-primary {
+  width: fit-content;
   padding: 8px 12px;
   border-radius: 8px;
   color: var(--color-white);
