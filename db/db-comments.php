@@ -27,10 +27,9 @@ function createComment($username, $content, $articleId): bool
             VALUES (:article_id, :username, :content)";
 
     $stmt = $pdo->prepare($sql);
-
     return $stmt->execute([
-        ":username" => htmlspecialchars($username),
-        ":content" => htmlspecialchars($content),
+        ":username" => ($username),
+        ":content" => ($content),
         ":article_id" => $articleId,
     ]);
 }

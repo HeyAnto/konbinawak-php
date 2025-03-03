@@ -1,27 +1,12 @@
 <?php
 require_once "../db/db-article.php";
-require_once "../db/db-comments.php";
 
 $article = getArticleById($_GET["id"]);
-
-if (isset($_POST["username"]) && isset($_POST["content"]) && isset($_POST["articleId"])) {
-    $username = $_POST["username"];
-    $content = $_POST["content"];
-    $articleId = $_POST["articleId"];
-
-    if (createComment($username, $content, $articleId)) {
-        header("Location: #section-comments");
-        exit();
-    } else {
-        include "../components/article-not-found.php";
-    }
-}
 
 if (!$article) {
     include "../components/article-not-found.php";
 }
 
-$comments = getComments($_GET["id"]);
 $pageTitle = $article["title"];
 $title = "Konbinawak - $pageTitle";
 include_once "../components/header.php";
@@ -54,23 +39,8 @@ include_once "../components/header.php";
     <section id="section-comments" class="article-content flex flex-column gap-50 mt-200">
         <h2>Commentaires</h2>
         <div class="flex flex-column gap-10">
-            <?php require_once "../components/form-comment.php" ?>
-            <?php if (!empty($comments)): ?>
-                <?php foreach ($comments as $comment): ?>
-                    <div class="article-comment flex flex-column">
-                        <div class="flex flex-row justify-between gap-10">
-                            <p><strong><?= htmlspecialchars($comment['username']); ?></strong></p>
-                            <p class="p-min"><?= date("d-m-Y - H:i:s", strtotime($comment["created_at"])) ?></p>
-                        </div>
-                        <p><?= htmlspecialchars($comment['content']); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="flex flex-column align-item-center gap-10">
-                    <img class="no-more" src="/assets/images/no-more.gif" alt="No More Article">
-                    <p class="p-grey">Il n'y a pas de commentaire pour l'instant...</p>
-                </div>
-            <?php endif; ?>
+            <?php include_once "../components/form-comment.php" ?>
+            <?php include "../components/article-comment.php" ?>
         </div>
     </section>
 </main>
