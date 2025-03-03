@@ -29,7 +29,11 @@ include_once "../components/header.php";
 
     <section class="article-content flex flex-column">
         <img class="article-cover"
+<<<<<<< Updated upstream
             src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.jpg") ?>"
+=======
+            src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
+>>>>>>> Stashed changes
             alt="<?php echo ($article["title"]) ?>">
     </section>
 

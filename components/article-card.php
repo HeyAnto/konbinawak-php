@@ -9,6 +9,7 @@ $articlePath = $isIndexPage ? "./pages/article.php" : "article.php";
 ?>
 
 <?php foreach ($articles as $article): ?>
+<<<<<<< Updated upstream
     <a href="<?php echo $articlePath ?>?id=<?php echo htmlspecialchars($article[" id"]) ?>" class="article-card flex
     flex-column gap-10">
         <img class="article-cover" src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
@@ -18,6 +19,17 @@ $articlePath = $isIndexPage ? "./pages/article.php" : "article.php";
             <p class="p-grey"><?php echo $article["description"] ?: "tag-archive" ?></p>
             <span class="article-tag <?php echo $article["category_color"] ?>">
                 <p class="p-min"><?php echo $article["category_name"] ?: "Non classé" ?></p>
+=======
+    <a href="<?php echo $articlePath ?>?id=<?php echo htmlspecialchars($article["id"]) ?>"
+        class="article-card flex flex-column gap-10">
+        <img class="article-cover" src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
+            alt="<?php echo ($article["title"]) ?>">
+        <div class="flex flex-column gap-5">
+            <h2><?php echo ($article["title"]) ?></h2>
+            <p class="p-grey"><?php echo ($article["description"]) ?></p>
+            <span class="article-tag <?php echo ($article["category_color"]) ?>">
+                <p class="p-min"><?php echo ($article["category_name"] ?: "Non classé") ?></p>
+>>>>>>> Stashed changes
             </span>
         </div>
     </a>

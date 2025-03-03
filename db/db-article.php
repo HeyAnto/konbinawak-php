@@ -14,6 +14,15 @@ function getArticles()
     return $stmt->fetchAll();
 }
 
+function getCategories()
+{
+    global $pdo;
+    $sql = "SELECT * FROM category ORDER BY name ASC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
 function getArticlesByCategory($category_id, $limit = null)
 {
     global $pdo;
@@ -67,4 +76,15 @@ function getFeaturedArticles()
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
+}
+
+function insertArticle($title, $description, $content, $category_id)
+{
+    global $pdo;
+
+    $sql = "INSERT INTO articles (title, description, content, category_id, created_at) 
+            VALUES (?, ?, ?, ?, NOW())";
+
+    $stmt = $pdo->prepare($sql);
+    return $stmt->execute([$title, $description, $content, $category_id]);
 }

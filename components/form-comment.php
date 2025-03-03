@@ -3,12 +3,12 @@
     <div class="flex flex-column gap-10">
         <div>
             <label for="username"></label>
-            <input class="form-comment" type="text" id="username" name="username" placeholder="Pseudo" maxlength="50"
+            <input class="form-input" type="text" id="username" name="username" placeholder="Pseudo" maxlength="50"
                 pattern="[A-Za-z0-9 ]+" autocomplete="off" required>
         </div>
         <div>
             <label for="content"></label>
-            <textarea class="form-comment" id="content" name="content" rows="4" placeholder="Votre commentaire..."
+            <textarea class="form-input" id="content" name="content" rows="4" placeholder="Votre commentaire..."
                 required></textarea>
         </div>
     </div>

@@ -7,6 +7,10 @@ header a {
   color: var(--color-white);
 }
 
+.header-action {
+  width: 100%;
+}
+
 nav {
   width: 100%;
   display: flex;
@@ -21,6 +25,16 @@ nav {
 .disabled {
   pointer-events: none;
   cursor: default;
+}
+
+.btn-nav-action {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: var(--color-dark-blue);
+}
+
+.btn-nav-action:hover {
+  background-color: var(--color-dark-pink);
 }
 
 .btn-nav {
@@ -157,30 +171,6 @@ footer img {
   border-radius: 8px;
 }
 
-/* Article Form Comment */
-.form-comment {
-  width: 100%;
-  padding: 12px;
-  border: solid 1px var(--color-grey);
-  border-radius: 8px;
-  outline: none;
-  resize: none;
-
-  font-family: var(--font-family);
-  font-size: var(--font-size-p);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-p);
-  transition: all 0.3s;
-}
-
-.form-comment:hover {
-  border-color: var(--color-dark);
-}
-
-.form-comment:focus {
-  border-color: var(--color-dark);
-}
-
 /* Loading Screen */
 .overlay-display {
   position: fixed;
@@ -242,6 +232,36 @@ footer img {
 
 .tag-selvi {
   background-color: var(--color-tag-selvi);
+}
+
+/* Form */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: solid 1px var(--color-grey);
+  border-radius: 8px;
+  outline: none;
+  resize: none;
+
+  font-family: var(--font-family);
+  font-size: var(--font-size-p);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-p);
+  transition: all 0.3s;
+}
+
+.form-input:hover {
+  border-color: var(--color-dark);
+}
+
+.form-input:focus {
+  border-color: var(--color-dark);
+}
+
+/* Section Article Create */
+.create-container {
+  width: 100%;
+  max-width: 600px;
 }
 
 /* No More */
