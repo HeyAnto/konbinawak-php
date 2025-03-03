@@ -1,7 +1,7 @@
 <?php
 require_once "../db/db-comments.php";
 
-if (isset($_POST["username"]) && isset($_POST["content"]) && isset($_POST["articleId"])) {
+if (!empty($_POST["username"]) && !empty($_POST["content"]) && !empty($_POST["articleId"])) {
     $username = $_POST["username"];
     $content = $_POST["content"];
     $articleId = $_POST["articleId"];

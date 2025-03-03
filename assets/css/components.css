@@ -9,6 +9,18 @@ header a {
 
 .header-action {
   width: 100%;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.header-action a:first-child {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-action a.btn-nav-action {
+  margin-left: auto;
 }
 
 nav {
@@ -276,6 +288,7 @@ footer img {
   .article-card {
     width: 400px;
   }
+
   .carousel-control-prev,
   .carousel-control-next {
     display: none;
@@ -283,6 +296,21 @@ footer img {
 }
 
 @media screen and (max-width: 425px) {
+  .header-action {
+    flex-direction: column; /* Passe en colonne */
+    justify-content: center;
+    gap: 10px; /* Espace entre le logo et le bouton */
+  }
+
+  .header-action a:first-child {
+    position: static; /* Annule le positionnement absolu */
+    transform: none;
+  }
+
+  .header-action a.btn-nav-action {
+    margin-left: 0; /* Supprime le décalage à droite */
+  }
+
   .article-card {
     width: 300px;
   }

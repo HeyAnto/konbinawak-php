@@ -19,7 +19,7 @@ function getComments($article_id)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function createComment($username, $content, $articleId): bool
+function createComment($articleId, $username, $content): bool
 {
     global $pdo;
     $sql = "INSERT INTO article_comments 

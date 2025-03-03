@@ -3,8 +3,8 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 ?>
 
 <header>
-    <div class="nav-content flex flex-column align-item-center gap-20">
-        <div class="header-action flex flex-row justify-between align-item-center gap-10">
+    <div class="nav-content flex flex-column align-item-center gap-10">
+        <div class="header-action flex align-item-center justify-content gap-10">
             <a class="<?= $currentPage === 'index' ? 'disabled' : '' ?>" href="/index.php">
                 <img src="/assets/images/utilities/full-logo.svg" alt="Logo Konbinawak">
             </a>
