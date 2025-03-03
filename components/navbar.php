@@ -4,11 +4,6 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 
 <header>
     <div class="nav-content flex flex-column align-item-center gap-20">
-<<<<<<< Updated upstream
-        <a class="<?php echo $currentPage === 'index' ? 'disabled' : '' ?>" href="/index.php">
-            <img src="/assets/images/utilities/full-logo.svg" alt="Logo Konbinawak">
-        </a>
-=======
         <div class="header-action flex flex-row justify-between align-item-center gap-10">
             <a class="<?= $currentPage === 'index' ? 'disabled' : '' ?>" href="/index.php">
                 <img src="/assets/images/utilities/full-logo.svg" alt="Logo Konbinawak">
@@ -17,7 +12,6 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
                 <p>Créer</p>
             </a>
         </div>
->>>>>>> Stashed changes
         <nav class="flex flex-row justify-center gap-10">
             <a class="btn-nav <?php echo $currentPage === 'index' ? 'nav-active disabled' : '' ?>" href="/index.php"
                 data-page="index">

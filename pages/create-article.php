@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
-
 <main class="flex flex-column align-item-center gap-100">
     <section class="create-container flex flex-column gap-10">
         <form class="flex flex-column gap-20" method="POST" action="">
