@@ -21,10 +21,10 @@ $comments = getComments($_GET["id"]);
     <?php foreach ($comments as $comment): ?>
         <div class="article-comment flex flex-column">
             <div class="flex flex-row justify-between flex-wrap">
-                <p><strong><?= htmlspecialchars($comment['username']); ?></strong></p>
-                <p class="p-min"><?= date("d-m-Y - H:i:s", strtotime($comment["created_at"])) ?></p>
+                <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong></p>
+                <p class="p-min"><?php echo date("d-m-Y - H:i:s", strtotime($comment["created_at"])) ?></p>
             </div>
-            <p><?= htmlspecialchars($comment['content']); ?></p>
+            <p><?php echo htmlspecialchars($comment['content']); ?></p>
         </div>
     <?php endforeach; ?>
 <?php else: ?>

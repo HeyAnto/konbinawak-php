@@ -9,14 +9,15 @@ $articlePath = $isIndexPage ? "./pages/article.php" : "article.php";
 ?>
 
 <?php foreach ($articles as $article): ?>
-    <a href="<?= $articlePath ?>?id=<?= htmlspecialchars($article["id"]) ?>" class="article-card flex flex-column gap-10">
-        <img class="article-cover" src="<?= ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
-            alt="Article Image">
+    <a href="<?php echo $articlePath ?>?id=<?php echo htmlspecialchars($article[" id"]) ?>" class="article-card flex
+    flex-column gap-10">
+        <img class="article-cover" src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
+            alt="<?php echo $article["title"] ?>">
         <div class="flex flex-column gap-5">
-            <h2><?= htmlspecialchars($article["title"]) ?></h2>
-            <p class="p-grey"><?= htmlspecialchars($article["description"]) ?></p>
-            <span class="article-tag <?= htmlspecialchars($article["category_color"]) ?>">
-                <p class="p-min"><?= htmlspecialchars($article["category_name"] ?: "Non classé") ?></p>
+            <h2><?php echo $article["title"] ?></h2>
+            <p class="p-grey"><?php echo $article["description"] ?: "tag-archive" ?></p>
+            <span class="article-tag <?php echo $article["category_color"] ?>">
+                <p class="p-min"><?php echo $article["category_name"] ?: "Non classé" ?></p>
             </span>
         </div>
     </a>

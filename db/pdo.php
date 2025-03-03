@@ -1,4 +1,5 @@
 <?php
+
 $host = "127.0.0.1";
 $dbname = "konbinawak";
 $port = "3306";
@@ -16,5 +17,5 @@ try {
     // echo "Connected successfully";
 
 } catch (PDOException $e) {
-    echo "Connection failed : " . $e->getMessage();
+    include_once "../components/db-not-found.php";
 }

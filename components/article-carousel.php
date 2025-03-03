@@ -7,14 +7,15 @@ $articles = getFeaturedArticles();
     <h1>À la une sur Konbinawak</h1>
     <div class="carousel-inner flex">
         <?php foreach ($articles as $article): ?>
-            <a href="../pages/article.php?id=<?= htmlspecialchars($article["id"]) ?>" class="carousel-item">
-                <img class="article-cover" src="<?= $article["img_cover"] ?: "/assets/images/articles/cover-null.webp" ?>"
-                    alt="<?= $article["title"] ?>">
+            <a href="../pages/article.php?id=<?php echo htmlspecialchars($article["id"]) ?>" class="carousel-item">
+                <img class="article-cover"
+                    src="<?php echo $article["img_cover"] ?: "/assets/images/articles/cover-null.webp" ?>"
+                    alt="<?php echo $article["title"] ?>">
                 <div class="flex flex-column gap-5 mt-20">
-                    <h2><?= $article["title"] ?></h2>
-                    <p class="p-grey"><?= $article["description"] ?></p>
-                    <span class="article-tag <?= $article["category_color"] ?: "tag-default" ?>">
-                        <p class="p-min"><?= $article["category_name"] ?: "Non classé" ?></p>
+                    <h2><?php echo $article["title"] ?></h2>
+                    <p class="p-grey"><?php echo $article["description"] ?></p>
+                    <span class="article-tag <?php echo $article["category_color"] ?: "tag-archive" ?>">
+                        <p class="p-min"><?php echo $article["category_name"] ?: "Non classé" ?></p>
                     </span>
                 </div>
             </a>

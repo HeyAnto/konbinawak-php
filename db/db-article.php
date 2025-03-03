@@ -33,9 +33,6 @@ function getArticlesByCategory($category_id, $limit = null)
     return $stmt->fetchAll();
 }
 
-
-
-
 function getArticleById($id)
 {
     global $pdo;
