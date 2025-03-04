@@ -1,4 +1,5 @@
 <?php
+$title = "Konbinawak - Création";
 include_once "../components/header.php";
 require_once "../db/db-article.php";
 
@@ -6,10 +7,10 @@ $categories = getCategories();
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $title = $_POST["title"] ?? "";
-    $description = $_POST["description"] ?? "";
-    $content = $_POST["content"] ?? "";
-    $category_id = $_POST["category"] ?? null;
+    $title = $_POST["title"];
+    $description = $_POST["description"];
+    $content = $_POST["content"];
+    $category_id = $_POST["category"];
 
     if (!empty($title) && !empty($description) && !empty($content) && $category_id) {
         if (insertArticle($title, $description, $content, $category_id)) {

@@ -3,20 +3,20 @@ require_once "../db/db-article.php";
 
 $article = getArticleById($_GET["id"]);
 
-if (!$article) {
-    include "../components/article-not-found.php";
-}
-
 $pageTitle = $article["title"];
 $title = "Konbinawak - $pageTitle";
 include_once "../components/header.php";
+
+if (!$article) {
+    include "../includes/article-not-found.php";
+}
 ?>
 
 <main class="flex flex-column align-item-center gap-50">
     <section class="article-content flex flex-column gap-20">
         <div class="article-attribute flex flex-wrap justify-between gap-10">
             <p>Créer le <?php echo date("d-m-Y", strtotime($article["created_at"])) ?></p>
-            <span class="article-tag <?php echo ($article["category_color"]) ?>">
+            <span class="article-tag <?php echo ($article["category_color"] ?: "tag-archive") ?>">
                 <p class="p-min"><?php echo ($article["category_name"] ?: "Non classé") ?></p>
             </span>
         </div>
@@ -46,6 +46,4 @@ include_once "../components/header.php";
     </section>
 </main>
 
-<?php
-include_once "../components/footer.php";
-?>
+<?php include_once "../components/footer.php"; ?>

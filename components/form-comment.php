@@ -1,5 +1,5 @@
 <form class="flex flex-column gap-5" method="POST" action="">
-    <input type="hidden" name="articleId" value="<?= $article['id'] ?>">
+    <input type="hidden" name="articleId" value="<?php echo $article["id"] ?>">
     <div class="flex flex-column gap-10">
         <div>
             <label for="username"></label>

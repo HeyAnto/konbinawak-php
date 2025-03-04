@@ -24,6 +24,4 @@ include_once "../components/header.php";
     </section>
 </main>
 
-<?php
-include_once "../components/footer.php";
-?>
+<?php include_once "../components/footer.php"; ?>

@@ -10,7 +10,7 @@ if (!empty($_POST["username"]) && !empty($_POST["content"]) && !empty($_POST["ar
         header("Location: #section-comments");
         exit();
     } else {
-        include_once "../components/article-not-found.php";
+        include_once "../includes/article-not-found.php";
     }
 }
 
@@ -21,10 +21,10 @@ $comments = getComments($_GET["id"]);
     <?php foreach ($comments as $comment): ?>
         <div class="article-comment flex flex-column">
             <div class="flex flex-row justify-between flex-wrap">
-                <p><strong><?php echo htmlspecialchars($comment['username']); ?></strong></p>
+                <p><strong><?php echo ($comment['username']); ?></strong></p>
                 <p class="p-min"><?php echo date("d-m-Y - H:i:s", strtotime($comment["created_at"])) ?></p>
             </div>
-            <p><?php echo htmlspecialchars($comment['content']); ?></p>
+            <p><?php echo ($comment['content']); ?></p>
         </div>
     <?php endforeach; ?>
 <?php else: ?>

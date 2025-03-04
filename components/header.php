@@ -15,5 +15,5 @@
 
     <?php
     include_once "navbar.php";
-    include_once "loading-screen.php";
+    include_once __DIR__ . "/../includes/loading-screen.php";
     ?>
