@@ -1,6 +1,31 @@
 <?php
 $title = "Konbinawak - Connexion";
 include_once "../../components/header.php";
+require_once "../../db/db-user.php";
+
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $password = trim($_POST["password"]);
+
+    if (!empty($email) && !empty($password)) {
+        $user = getUserByEmail($email);
+
+        if ($user && password_verify($password, $user["password"])) {
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["username"] = $user["username"];
+
+            header("Location: connected.php");
+            exit;
+        } else {
+            $message = "Email ou mot de passe incorrect.";
+        }
+    } else {
+        $message = "Veuillez remplir tous les champs.";
+    }
+}
+
 ?>
 
 <main class="flex flex-column align-item-center gap-100">
@@ -18,7 +43,7 @@ include_once "../../components/header.php";
                         maxlength="255" autocomplete="off" required>
                 </div>
 
-                <div class="flex flex-column gap-5">
+                <div id="password-login" class="flex flex-column gap-5">
                     <label for="password">Password</label>
                     <div class="password-container">
                         <input class="form-input" type="password" id="password" name="password" maxlength="255"
@@ -28,7 +53,12 @@ include_once "../../components/header.php";
                 </div>
             </div>
 
+            <?php if (!empty($message)) : ?>
+                <p style="color: red; font-size:0.75rem;"><?php echo $message; ?></p>
+            <?php endif; ?>
+
             <button type="submit" class="btn-primary">Connecter</button>
+
             <script src="/scripts/password.js"></script>
         </form>
     </section>

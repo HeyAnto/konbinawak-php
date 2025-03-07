@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre.";
         } elseif (emailExists($email)) {
             $message = "Cet email est déjà utilisé.";
+        } elseif (usernameExists($username)) {
+            $message = "Username déjà utilisé.";
         } else {
             if (userRegister($username, $email, $password)) {
                 header("Location: connected.php");
@@ -49,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         maxlength="255" autocomplete="off" required>
                 </div>
 
-                <div id="password-container" class="flex flex-column gap-5">
+                <div id="password-register" class="flex flex-column gap-5">
                     <label for="password">Password</label>
                     <div class="password-container">
                         <input class="form-input" type="password" id="password" name="password" maxlength="255"
@@ -60,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <?php if (!empty($message)) : ?>
-                <p style="color: red;"><?php echo $message ?></p>
+                <p style="color: red; font-size:0.75rem;"><?php echo $message ?></p>
             <?php endif; ?>
 
             <button type="submit" class="btn-primary">Finaliser</button>

@@ -1,4 +1,7 @@
-<?php $currentPage = basename($_SERVER["PHP_SELF"], ".php"); ?>
+<?php
+$currentPage = basename($_SERVER["PHP_SELF"], ".php");
+session_start();
+?>
 
 <header>
     <div class="nav-content flex flex-column align-item-center gap-10">
@@ -6,10 +9,17 @@
             <a class="<?= $currentPage === "index" ? "disabled" : "" ?>" href="/index.php">
                 <img src="/assets/images/utilities/full-logo.svg" alt="Logo Konbinawak">
             </a>
-            <a class="btn-nav-action <?php echo $currentPage === "login" ? "nav-active disabled" : "" ?>"
-                href="/pages/connection/login.php" data-page="login">
-                <p>Login</p>
-            </a>
+
+            <?php if (isset($_SESSION["user_id"])) : ?>
+                <a class="btn-nav-action" href="/pages/connection/logout.php">
+                    <p>Logout</p>
+                </a>
+            <?php else : ?>
+                <a class="btn-nav-action <?= $currentPage === "login" ? "nav-active disabled" : "" ?>"
+                    href="/pages/connection/login.php" data-page="login">
+                    <p>Login</p>
+                </a>
+            <?php endif; ?>
         </div>
         <nav class="flex flex-row justify-center gap-10">
             <a class="btn-nav <?php echo $currentPage === "index" ? "nav-active disabled" : "" ?>" href="/index.php"
