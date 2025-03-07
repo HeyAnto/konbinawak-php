@@ -40,7 +40,7 @@ if (!$article) {
     <section id="section-comments" class="article-content flex flex-column gap-50 mt-200">
         <h2>Commentaires</h2>
         <div class="flex flex-column gap-10">
-            <?php include_once "../components/form-comment.php" ?>
+            <?php include_once "../components/create-comment.php" ?>
             <?php include "../components/article-comment.php" ?>
         </div>
     </section>

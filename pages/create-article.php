@@ -1,5 +1,5 @@
 <?php
-require_once "connection/init.php";
+require_once __DIR__ . "/../pages/connection/init.php";
 
 if (!isset($_SESSION["user_id"])) {
     header("Location: connection/login.php");
