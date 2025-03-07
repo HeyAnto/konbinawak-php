@@ -6,19 +6,23 @@ require_once "../../db/db-user.php";
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $username = htmlspecialchars(trim($_POST["username"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $password = trim($_POST["password"]);
 
     if (!empty($username) && !empty($email) && !empty($password)) {
-        if (userRegister($username, $email, $password)) {
-            include_once "connected.php";
-            exit;
+        if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/\d/', $password)) {
+            $message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre.";
+        } elseif (emailExists($email)) {
+            $message = "Cet email est déjà utilisé.";
         } else {
-            $message = "Erreur lors de l'inscription";
+            if (userRegister($username, $email, $password)) {
+                header("Location: connected.php");
+                exit;
+            } else {
+                $message = "Erreur lors de l'inscription";
+            }
         }
-    } else {
-        $message = "Tous les champs doivent être remplis.";
     }
 }
 ?>
@@ -36,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="flex flex-column gap-5">
                     <label for="username">Username</label>
                     <input class="form-input" type="text" id="username" name="username" maxlength="255"
-                        autocomplete="off" pattern="[A-Za-z0-9 ]+" required>
+                        autocomplete="off" pattern="[A-Za-z0-9]+" required>
                 </div>
 
                 <div class="flex flex-column gap-5">
@@ -45,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         maxlength="255" autocomplete="off" required>
                 </div>
 
-                <div class="flex flex-column gap-5">
+                <div id="password-container" class="flex flex-column gap-5">
                     <label for="password">Password</label>
                     <div class="password-container">
                         <input class="form-input" type="password" id="password" name="password" maxlength="255"
@@ -55,7 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             </div>
 
+            <?php if (!empty($message)) : ?>
+                <p style="color: red;"><?php echo $message ?></p>
+            <?php endif; ?>
+
             <button type="submit" class="btn-primary">Finaliser</button>
+
             <script src="/scripts/password.js"></script>
         </form>
     </section>

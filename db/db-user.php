@@ -13,3 +13,14 @@ function userRegister($username, $email, $password)
     $stmt = $pdo->prepare($sql);
     return $stmt->execute([$username, $email, $hashedPassword]);
 }
+
+function emailExists($email)
+{
+    global $pdo;
+
+    $sql = "SELECT COUNT(*) FROM user WHERE email = ?";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$email]);
+    return $stmt->fetchColumn() > 0;
+}
