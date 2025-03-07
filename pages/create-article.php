@@ -1,4 +1,11 @@
 <?php
+require_once "connection/init.php";
+
+if (!isset($_SESSION["user_id"])) {
+    header("Location: connection/login.php");
+    exit;
+}
+
 $title = "Konbinawak - Création";
 include_once "../components/header.php";
 require_once "../db/db-article.php";

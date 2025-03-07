@@ -1,6 +1,6 @@
 <?php
+require_once __DIR__ . "/../pages/connection/init.php";
 $currentPage = basename($_SERVER["PHP_SELF"], ".php");
-session_start();
 ?>
 
 <header>
