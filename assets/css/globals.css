@@ -17,6 +17,10 @@
   --color-dark-blue: #2127ab;
   --color-blue: #3139fb;
 
+  /* Red Color */
+  --color-red: #ff0e22;
+  --color-red-hover: #ff4757;
+
   /* Pink Color */
   --color-dark-pink: #ff5060;
   --color-pink: #ffdede;
@@ -141,6 +145,7 @@ button {
 }
 
 a {
+  width: fit-content;
   text-decoration: none;
   color: var(--color-dark);
 }
@@ -153,13 +158,101 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  .overlay-display {
+    padding: 100px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  .carousel-cover {
+    height: 400px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-cover {
+    height: 180px;
+  }
+
+  .article-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .card-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .carousel-cover {
+    height: 280px;
+  }
+
+  .card-cover {
+    height: 280px;
+  }
+
+  .article-cover {
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 425px) {
   main {
     padding: 50px 10px 100px;
+  }
+
+  .header-action {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .header-action a:first-child {
+    position: static;
+    transform: none;
+  }
+
+  .header-action a.btn-nav-action {
+    margin-left: 0;
+  }
+
+  .overlay-display {
+    padding: 20px;
+  }
+
+  .carousel-cover {
+    height: 230px;
+  }
+
+  .card-cover {
+    height: 230px;
+  }
+
+  .article-cover {
+    height: 230px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .carousel-cover {
+    height: 180px;
+  }
+
+  .card-cover {
+    height: 180px;
+  }
+
+  .article-cover {
+    height: 180px;
   }
 }

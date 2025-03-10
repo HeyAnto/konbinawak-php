@@ -12,7 +12,7 @@ $articlePath = $isIndexPage ? "./pages/article.php" : "article.php";
 <?php foreach ($articles as $article): ?>
     <a href="<?php echo $articlePath ?>?id=<?php echo htmlspecialchars($article["id"]) ?>" class="article-card flex
     flex-column gap-10">
-        <img class="article-cover" src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
+        <img class="card-cover" src="<?php echo ($article["img_cover"] ?: "/assets/images/articles/cover-null.webp") ?>"
             alt="<?php echo $article["title"] ?>">
         <div class="flex flex-column gap-5">
             <h2><?php echo $article["title"] ?></h2>

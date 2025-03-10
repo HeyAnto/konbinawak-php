@@ -29,6 +29,10 @@
   align-items: flex-end;
 }
 
+.align-item-left {
+  align-items: flex-start;
+}
+
 .align-item-center {
   align-items: center;
 }

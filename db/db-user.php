@@ -1,17 +1,17 @@
 <?php
 require_once "pdo.php";
 
-function userRegister($username, $email, $password)
+function userRegister($username, $email, $password, $role = 'user')
 {
     global $pdo;
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user (username, email, password, created_at) 
-            VALUES (?, ?, ?, NOW())";
+    $sql = "INSERT INTO user (username, email, password, role) VALUES (?, ?, ?, ?)";
 
     $stmt = $pdo->prepare($sql);
-    return $stmt->execute([$username, $email, $hashedPassword]);
+    $stmt->execute([$username, $email, $hashedPassword, $role]);
+    return $pdo->lastInsertId();
 }
 
 function usernameExists($username)

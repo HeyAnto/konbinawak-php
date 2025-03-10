@@ -1,4 +1,5 @@
 <?php
+require_once "init.php";
 $title = "Konbinawak - Inscription";
 include_once "../../components/header.php";
 require_once "../../db/db-user.php";
@@ -11,14 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = trim($_POST["password"]);
 
     if (!empty($username) && !empty($email) && !empty($password)) {
-        if (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/\d/', $password)) {
+        if (strlen($username) > 50) {
+            $message = "L'username ne doit pas dépasser 50 caractères.";
+        } elseif (strlen($password) < 8 || !preg_match('/[A-Z]/', $password) || !preg_match('/\d/', $password)) {
             $message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre.";
         } elseif (emailExists($email)) {
             $message = "Cet email est déjà utilisé.";
         } elseif (usernameExists($username)) {
             $message = "Username déjà utilisé.";
         } else {
-            if (userRegister($username, $email, $password)) {
+            $userId = userRegister($username, $email, $password, 'user');
+
+            if ($userId) {
+                $_SESSION["user_id"] = $userId;
+                $_SESSION["username"] = $username;
+                $_SESSION["role"] = 'user';
                 header("Location: connected.php");
                 exit;
             } else {
@@ -41,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="flex flex-column gap-10">
                 <div class="flex flex-column gap-5">
                     <label for="username">Username</label>
-                    <input class="form-input" type="text" id="username" name="username" maxlength="255"
+                    <input class="form-input" type="text" id="username" name="username" maxlength="50"
                         autocomplete="off" pattern="[A-Za-z0-9]+" required>
                 </div>
 

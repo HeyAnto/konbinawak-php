@@ -11,7 +11,7 @@ $gamingArticles = getArticlesByCategory(1, 3);
     <?php include_once "./components/article-carousel.php"; ?>
 
     <section class="flex flex-column gap-10">
-        <a href="./pages/politique.php" class="flex">
+        <a href="./pages/politique.php" class="flex align-item-left">
             <span class="page-title tag-politique">
                 <h2>Politique</h2>
             </span>

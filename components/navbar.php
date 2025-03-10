@@ -11,7 +11,7 @@ $currentPage = basename($_SERVER["PHP_SELF"], ".php");
             </a>
 
             <?php if (isset($_SESSION["user_id"])) : ?>
-                <a class="btn-nav-action" href="/pages/connection/logout.php">
+                <a class="btn-nav-action" href="/pages/connection/logged-out.php">
                     <p>Logout</p>
                 </a>
             <?php else : ?>

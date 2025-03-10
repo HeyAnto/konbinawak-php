@@ -121,9 +121,11 @@ footer a:hover {
   transform: scale(0.98);
 }
 
-.article-cover {
+.card-cover {
   width: 100%;
+  height: 150px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .article-tag {
@@ -140,6 +142,13 @@ footer a:hover {
   width: 100%;
   max-width: 900px;
   overflow: hidden;
+}
+
+.carousel-cover {
+  width: 100%;
+  height: 470px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .carousel-inner {
@@ -160,7 +169,7 @@ footer a:hover {
 .carousel-control-next {
   cursor: pointer;
   position: absolute;
-  top: 35%;
+  top: 40%;
   width: auto;
   padding: 12px;
   margin: 12px;
@@ -179,6 +188,13 @@ footer a:hover {
 .article-attribute {
   padding: 10px 0px;
   border-bottom: solid 1px var(--color-dark);
+}
+
+.article-cover {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .article-content {
@@ -224,6 +240,20 @@ footer a:hover {
 .btn-primary:hover {
   transform: scale(0.95);
   background-color: var(--color-light-grey);
+}
+
+.btn-danger {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  transition: all 0.3s;
+}
+
+.btn-danger:hover {
+  transform: scale(0.95);
+  background-color: var(--color-red-hover);
 }
 
 /* Page Title/Tag */
@@ -322,45 +352,4 @@ footer a:hover {
 .no-more {
   width: 200px;
   border-radius: 8px;
-}
-
-/* Media */
-@media screen and (max-width: 768px) {
-  .article-card {
-    width: 400px;
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    display: none;
-  }
-
-  .overlay-display {
-    padding: 100px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .header-action {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .header-action a:first-child {
-    position: static;
-    transform: none;
-  }
-
-  .header-action a.btn-nav-action {
-    margin-left: 0;
-  }
-
-  .article-card {
-    width: 300px;
-  }
-
-  .overlay-display {
-    padding: 20px;
-  }
 }

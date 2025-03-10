@@ -4,7 +4,7 @@
         <img src="/assets/images/utilities/logo.svg" alt="Mini Logo Konbinawak">
         <p style="text-align: center;">« Parce que la réalité est trop plate, on l'a réécrite. »</p>
 
-        <?php if (isset($_SESSION["user_id"])) : ?>
+        <?php if (isset($_SESSION["user_id"]) && ($_SESSION["role"] === 'admin' || $_SESSION["role"] === 'editor')) : ?>
             <a href="/pages/create-article.php">Créer un article</a>
         <?php endif; ?>
 

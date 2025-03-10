@@ -8,7 +8,7 @@ $articles = getFeaturedArticles();
     <div class="carousel-inner flex">
         <?php foreach ($articles as $article): ?>
             <a href="../pages/article.php?id=<?php echo htmlspecialchars($article["id"]) ?>" class="carousel-item">
-                <img class="article-cover"
+                <img class="carousel-cover"
                     src="<?php echo $article["img_cover"] ?: "/assets/images/articles/cover-null.webp" ?>"
                     alt="<?php echo $article["title"] ?>">
                 <div class="flex flex-column gap-5 mt-20">
